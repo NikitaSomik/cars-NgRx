@@ -1,0 +1,18 @@
+{
+  "cars": [
+    {
+      "id": 2,
+      "name": "Audi",
+      "date": "04.05.17",
+      "model": "S8",
+      "isSold": true
+    },
+    {
+      "name": "Mercedes",
+      "date": "21 Nov 2018 00:41:35",
+      "model": "G65",
+      "isSold": true,
+      "id": 3
+    }
+  ]
+}
