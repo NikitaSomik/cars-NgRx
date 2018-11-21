@@ -27,6 +27,7 @@ export function carsReducer(state = initialState, action: CarsAction) {
                 cars: [...state.cars]
             };
         case CAR_ACTION.LOAD_CARS:
+        console.log(action.payload);
             return {
                 ...state,
                 cars: [...action.payload]

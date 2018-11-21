@@ -1,11 +1,11 @@
-import { catchError } from 'rxjs/operatorstoPromise';
 import { AddCar, LoadCars, DeleteCar, UpdateCar } from './redux/cars.action';
 import { Store } from '@ngrx/store';
 import { Injectable } from '@angular/core';
 import { AppState } from './redux/app.state';
 import { HttpClient, HttpResponse } from '@angular/common/http';
-import { catchError, map, tap } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { Car } from './car.model';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class CarsService {
@@ -13,6 +13,13 @@ export class CarsService {
     static BASE_URL: string = 'http://localhost:3000/';
 
     constructor(private http: HttpClient, private stote: Store<AppState>) {}
+
+    preloadCars() {
+        return this.http.get(CarsService.BASE_URL + 'cars')
+            .pipe(
+                map((response: Response) => response)
+            );
+    }
 
     loadCars() {
         this.http.get(CarsService.BASE_URL + 'cars')

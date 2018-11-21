@@ -30,7 +30,9 @@ export class UpdateCar implements Action {
 export class LoadCars implements Action {
     readonly type = CAR_ACTION.LOAD_CARS;
 
-    constructor(public payload) {}
+    constructor(public payload) {
+        console.log(payload);
+    }
 }
 
 export type CarsAction = AddCar | DeleteCar | UpdateCar | LoadCars;
